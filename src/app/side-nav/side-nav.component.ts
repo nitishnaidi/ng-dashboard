@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-side-nav",
@@ -7,12 +8,16 @@ import { Component, OnInit } from "@angular/core";
 })
 
 export class SideNavComponent implements OnInit {
-  
-  constructor() { 
+  selectedItem = 'info';
+  constructor(private router: Router) { 
 
   }
 
-  ngOnInit() {
+  ngOnInit() { }
 
+  onClick(item: string) {
+    console.log('clicked item is: ', item);
+    this.selectedItem = item;
+    this.router.navigateByUrl(this.selectedItem);
   }
 }
