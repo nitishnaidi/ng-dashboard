@@ -8,7 +8,7 @@ import { Router } from "@angular/router";
 })
 
 export class SideNavComponent implements OnInit {
-  selectedItem = 'info';
+  selectedItem = '';
   constructor(private router: Router) { 
 
   }
