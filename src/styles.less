@@ -1,1 +1,66 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f7f7f7;
+}
+
+@iterations: 5;
+.loop (@i) when (@i > 0) {
+  .m-@{i} {
+    margin: (@i * 0.25em);
+  }
+  .mt-@{i} {
+    margin: (@i * 0.25em);
+  }
+  .mr-@{i} {
+    margin: (@i * 0.25em);
+  }
+  .mb-@{i} {
+    margin: (@i * 0.25em);
+  }
+  .ml-@{i} {
+    margin: (@i * 0.25em);
+  }
+  .mx-@{i} {
+    margin-left: (@i * 0.25em);
+    margin-right: (@i * 0.25em);
+  }
+  .my-@{i} {
+    margin-top: (@i * 0.25em);
+    margin-bottom: (@i * 0.25em);
+  }
+
+  .p-@{i} {
+    padding: (@i * 0.25em);
+  }
+  .pt-@{i} {
+    padding: (@i * 0.25em);
+  }
+  .pr-@{i} {
+    padding: (@i * 0.25em);
+  }
+  .pb-@{i} {
+    padding: (@i * 0.25em);
+  }
+  .pl-@{i} {
+    padding: (@i * 0.25em);
+  }
+
+  .px-@{i} {
+    padding-right: (@i * 0.25em);
+    padding-left: (@i * 0.25em);
+  }
+
+  .py-@{i} {
+    padding-top: (@i * 0.25em);
+    padding-bottom: (@i * 0.25em);
+  }
+
+  .loop(@i - 1);
+}
+.loop (@iterations);
+
+.bold {
+  font-weight: 600;
+}
