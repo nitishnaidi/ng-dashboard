@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, EventEmitter, OnInit, Output } from "@angular/core";
 import { Router } from "@angular/router";
 
 @Component({
@@ -8,7 +8,8 @@ import { Router } from "@angular/router";
 })
 
 export class HeaderComponent implements OnInit {
-  
+  @Output() homeClicked = new EventEmitter<string>();
+  flag = false;
   constructor(private router: Router) { 
 
   }
@@ -17,7 +18,11 @@ export class HeaderComponent implements OnInit {
 
   }
   onClick(){
+    // const now = new Date().getMilliseconds();
+    // this.homeClicked.emit('home'+now);
+    // this.flag = !this.flag;
+    // this.homeClicked.emit(this.flag ? 'home': 'againHome');
+    this.homeClicked.emit('home'+Math.random());
     this.router.navigateByUrl('home');
-
   }
 }

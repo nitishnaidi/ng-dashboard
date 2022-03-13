@@ -1,7 +1,7 @@
 <div class="app-container">
-  <app-header></app-header>
+  <app-header (homeClicked)="handleHomeClickEvent($event)"></app-header>
   <div class="flex-col-container">
-    <app-side-nav></app-side-nav>
+    <app-side-nav [selectedItem]="isHomeClicked"></app-side-nav>
     <app-main></app-main>
   </div>
 </div>

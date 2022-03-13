@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.less']
 })
 export class AppComponent {
-  title = 'ng-dashboard';
+  isHomeClicked = 'default';
+
+  handleHomeClickEvent(value: string) {
+    this.isHomeClicked = value;
+  }
 }

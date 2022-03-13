@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, Input, OnChanges, OnInit, SimpleChanges } from "@angular/core";
 import { Router } from "@angular/router";
 
 @Component({
@@ -7,13 +7,19 @@ import { Router } from "@angular/router";
   styleUrls: ["./side-nav.component.less"]
 })
 
-export class SideNavComponent implements OnInit {
-  selectedItem = '';
+export class SideNavComponent implements OnInit, OnChanges {
+  @Input() selectedItem = '';
   constructor(private router: Router) { 
 
   }
 
-  ngOnInit() { }
+  ngOnInit() { 
+    console.log('init selected Item: ', this.selectedItem);    
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log('on change selected Item: ', this.selectedItem);  
+  }
 
   onClick(item: string) {
     console.log('clicked item is: ', item);
