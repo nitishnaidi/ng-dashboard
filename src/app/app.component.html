@@ -1,7 +1,15 @@
-<div class="app-container">
+<!-- <div class="app-container">
   <app-header (homeClicked)="handleHomeClickEvent($event)"></app-header>
   <div class="flex-col-container">
+    isHomeClicked - {{isHomeClicked}}
     <app-side-nav [selectedItem]="isHomeClicked"></app-side-nav>
     <app-main></app-main>
   </div>
+</div> -->
+<h1>SUM</h1>
+<div>enter number-a: <input type="number" [(ngModel)]="x"></div>
+<div>enter number-b: <input type="number" [(ngModel)]="y"></div>
+<sum [a]="x" [b]="y" (sum)="z=$event; "></sum>
+<div>
+sum of {{x}} and {{y}} is: {{z}}
 </div>
