@@ -6,9 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.less']
 })
 export class AppComponent {
+  x=0; y=0; z=0;
   isHomeClicked = 'default';
 
   handleHomeClickEvent(value: string) {
+    console.log('handler', value);
+    
     this.isHomeClicked = value;
+  
   }
+  
 }
