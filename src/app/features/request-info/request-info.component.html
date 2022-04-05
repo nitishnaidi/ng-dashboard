@@ -1,17 +1,29 @@
 <div class="req-info-container">
-    <div class="dropdown">
-        <h5>Dropdown</h5>
-        <p-dropdown
-          [options]="countries"
-          [(ngModel)]="selectedCountryAdvanced"
-          placeholder="Select a Country"
-          [filter]="true"
-          filterBy="value"
-          [showClear]="true"
-          optionLabel="label"
-          [showClear]="true"
-          styleClass="min-width"
-        ></p-dropdown>
-        <div class="mt-2" *ngIf="selectedCountryAdvanced">Your favourite country is :{{ selectedCountryAdvanced?.label }}</div>
-    </div>
+  <div class="dropdown">
+      <h5>Dropdown</h5>
+      <p-dropdown
+        [options]="countries"
+        [(ngModel)]="selectedCountryAdvanced"
+        placeholder="Select a Country"
+        [filter]="true"
+        filterBy="value"
+        [showClear]="true"
+        optionLabel="label"
+        [showClear]="true"
+        styleClass="min-width"
+      ></p-dropdown>
+      <div class="mt-2" *ngIf="selectedCountryAdvanced">Your favourite country is :{{ selectedCountryAdvanced?.label }}</div>
+  </div>
+
+  <div class="autocomplete">
+      <h5>AutoComplete</h5>
+      <p-autoComplete [(ngModel)]="selectedCountryAdvanced" [suggestions]="countrySuggestions" (completeMethod)="filterCountry($event)" field="label" [dropdown]="true">
+          <ng-template let-country pTemplate="item">
+              <div class="country-item">
+                  <div>{{country?.label}}</div>
+              </div>
+          </ng-template>
+      </p-autoComplete>
+
+  </div>
 </div>
