@@ -6,23 +6,13 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   styleUrls: ['sum.component.scss'],
 })
 export class SumComponent {
-  @Input() a: number | undefined;
-  @Input() b: number | undefined;
+  @Input() a: number = 0;
+  @Input() b: number = 0;
 
-  @Output() sum = new EventEmitter<any>();
+  @Output() sum = new EventEmitter<number>();
 
   add() {
-    let obj: any = {};
-    if (!this.a) {
-      obj.field = 'a';
-      this.sum.emit(obj);
-    } else if (!this.b) {
-      obj.field = 'b';
-      this.sum.emit(obj);
-    } else {
-      let c = this.a + this.b;
-      obj.sum = c;
-      this.sum.emit(obj);
-    }
+    let c = this.a + this.b;
+    this.sum.emit(c);
   }
 }
