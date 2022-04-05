@@ -1,1 +1,17 @@
-<div>Request Info</div>
+<div class="req-info-container">
+    <div class="dropdown">
+        <h5>Dropdown</h5>
+        <p-dropdown
+          [options]="countries"
+          [(ngModel)]="selectedCountryAdvanced"
+          placeholder="Select a Country"
+          [filter]="true"
+          filterBy="value"
+          [showClear]="true"
+          optionLabel="label"
+          [showClear]="true"
+          styleClass="min-width"
+        ></p-dropdown>
+        <div class="mt-2" *ngIf="selectedCountryAdvanced">Your favourite country is :{{ selectedCountryAdvanced?.label }}</div>
+    </div>
+</div>

@@ -8,6 +8,11 @@ import { Router } from "@angular/router";
 })
 
 export class SideNavComponent implements OnInit, OnChanges {
+
+ 
+
+  
+
   @Input() selectedItem = '';
   constructor(private router: Router) { 
 
