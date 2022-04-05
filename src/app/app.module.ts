@@ -11,6 +11,10 @@ import { VisitComponent } from './features/visit/visit.component';
 import { HeaderComponent } from './header/header.component';
 import { MainComponent } from './main/main.component';
 import { SideNavComponent } from './side-nav/side-nav.component';
+import { AutoCompleteModule } from 'primeng/autocomplete';
+import { FormsModule } from '@angular/forms';
+import {DropdownModule} from 'primeng/dropdown';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -22,9 +26,16 @@ import { SideNavComponent } from './side-nav/side-nav.component';
     GiveComponent,
     RequestInfoComponent,
     ApplyComponent,
-    HomeComponent
+    HomeComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    AppRoutingModule, 
+    FormsModule, 
+    AutoCompleteModule,
+    DropdownModule
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
