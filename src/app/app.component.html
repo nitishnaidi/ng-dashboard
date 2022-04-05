@@ -8,8 +8,10 @@
 </div> -->
 <h1>SUM</h1>
 <div>enter number-a: <input type="number" [(ngModel)]="x"></div>
+<div *ngIf="noA" class="error-message">Please enter a valid number for A</div>
 <div>enter number-b: <input type="number" [(ngModel)]="y"></div>
-<sum [a]="x" [b]="y" (sum)="z=$event; "></sum>
+<div *ngIf="noB" class="error-message">Please enter a valid number for B</div>
+<sum [a]="x" [b]="y" (sum)="handleSum($event)"></sum>
 <div>
-sum of {{x}} and {{y}} is: {{z}}
+sum of {{x}} and {{y}} is: {{z | json}}
 </div>
