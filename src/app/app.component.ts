@@ -7,6 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   x=0; y=0; z=0;
+  noA = false;
+  noB = false;
   isHomeClicked = 'default';
 
   handleHomeClickEvent(value: string) {
@@ -14,6 +16,19 @@ export class AppComponent {
     
     this.isHomeClicked = value;
   
+  }
+
+  handleSum(event: any) {
+    if (event.sum) {
+      this.noA=this.noB=false;
+      this.z = event.sum;
+    } else if (event.field === 'a'){
+      this.noA = true;
+      this.noB=false;
+    } else {
+      this.noB = true;
+      this.noA=false;
+    }
   }
   
 }
